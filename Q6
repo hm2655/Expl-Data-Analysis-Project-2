@@ -1,0 +1,6 @@
+> motorcode<-summarypol$SCC[542:1679]
+> motorpollution<-pollution[is.element(pollution$SCC, motorcode), ]
+> bothmotpol<-motorpollution[motorpollution$fips=="24510" | motorpollution$fips=="06037", ]
+> bothmotpoldata<-aggregate(bothmotpol$Emissions, list(Year=bothmotpol$year, County=bothmotpol$fips), sum)> png("q6.png")
+> ggplot(bothmotpoldata, aes(x=Year, y=x, color=County))+geom_point()+geom_line()+ylab("Emissions")+ggtitle("Emissions from Motor Vehicles in US 1999-2008")
+> dev.off()
