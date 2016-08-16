@@ -1,0 +1,5 @@
+> q3<-pollution[pollution$fips=="24510",]
+> q3<-aggregate(q3$Emissions, list(Year=q3$year, Type=q3$type), sum)
+> png("q3.png")
+> ggplot(data=q3, aes(x=Year, y=x, color=Type))+geom_point()+geom_line()+ylab("Emissions")+ ggtitle("Emissions from Different Sources in Baltimore 1999-2008")
+> dev.off()
