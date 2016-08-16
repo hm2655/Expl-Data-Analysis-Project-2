@@ -1,0 +1,4 @@
+> q1<-aggregate(pollution$Emissions, list(Year=pollution$year), sum)	
+> png("q1.png")
+> plot(q1$Year,q1$x, xlab="Year", ylab="Emissions", main="Total Emission in US 1999-2008")
+> dev.off()
