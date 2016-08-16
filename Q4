@@ -1,0 +1,6 @@
+> coaldata<-summarypol$SCC[1:30]
+> coalpollution<-pollution[is.element(pollution$SCC,coaldata), ]
+> coalpolchange<-aggregate(coalpollution$Emissions, list(Year=coalpollution$year), sum)
+> png("q4.png")
+> ggplot(coalpolchange, aes(x=Year,y=x))+geom_point()+geom_line()+ylab("Emissions")+ggtitle("Emissions from Coal Combustion in US 1999-2008")
+> dev.off
