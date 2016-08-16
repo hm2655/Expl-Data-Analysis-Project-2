@@ -1,0 +1,7 @@
+> motorcode<-summarypol$SCC[542:1679]
+> motorpollution<-pollution[is.element(pollution$SCC, motorcode), ]
+> bmotorpol<-motorpollution[motorpollution$fips=="24510",]
+> bmotorpoly<-aggregate(bmotorpol$Emissions, list(Year=bmotorpol$year), sum)
+> png("q5.png")
+> ggplot(data=bmotorpoly, aes(x= Year, y=x))+geom_point()+geom_line()+ylab("Emissions")+ggtitle("Emissions from Motor Vehicles in Baltimore, 1999-2008")
+> dev.off()
