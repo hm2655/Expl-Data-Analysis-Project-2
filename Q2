@@ -1,0 +1,5 @@
+> q2<-pollution[pollution$fips=="24510",]
+> q2<-aggregate(q2$Emissions,list(Year=q2$year), sum)
+> png("q2.png")
+> plot(q2$Year,q2$x, xlab="Year", ylab="Emissions", main=" Emission in Baltimore 1999-2008")
+> dev.off()
